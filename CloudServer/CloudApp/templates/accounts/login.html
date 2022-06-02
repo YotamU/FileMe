@@ -16,13 +16,13 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #00bbbe !important;
+			background: #070726 !important;
 		}
 		.user_card {
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #74cfbf;
+			background: #bdbdbd;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -69,7 +69,7 @@
 		}
 
 		#messages{
-			background-color: grey;
+			background-color: red;
 			color: #fff;
 			padding: 10px;
 			margin-top: 10px;
@@ -82,8 +82,6 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
-
-
 					<h3 id="form-title">LOGIN</h3>
 				</div>
 				<div class="d-flex justify-content-center form_container">
@@ -111,6 +109,7 @@
 				{% for message in messages%}
 				   <p id="messages">{{message}}</p>
 				{% endfor %}
+				{{form.errors}}
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>

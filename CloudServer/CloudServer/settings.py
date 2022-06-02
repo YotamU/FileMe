@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-
+import sslserver
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,12 +26,14 @@ SECRET_KEY = 'django-insecure-t55+m62z0$w)u-k27ve_q^u2b4%%4!70f6rbdwn(efw2m_aq(&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'django_extensions',
+    'sslserver',
     'CloudApp.apps.CloudappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,9 +121,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGOUT_URL = '/Login/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_EXPIRE_SECONDS = 30
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
+MEDIA_URL= "/media/"

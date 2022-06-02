@@ -14,13 +14,13 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #00bbbe !important;
+			background: #070726 !important;
 		}
 		.user_card {
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #74cfbf;
+			background: #bdbdbd;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -86,6 +86,12 @@
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+                            {{form.email}}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 
@@ -120,8 +126,9 @@
 	<script>
 		var form_fields = document.getElementsByTagName('input')
 		form_fields[1].placeholder='Username..';
-		form_fields[2].placeholder='Enter password...';
-		form_fields[3].placeholder='Re-enter Password...';
+		form_fields[2].placeholder='Email..';
+		form_fields[3].placeholder='Enter password...';
+		form_fields[4].placeholder='Re-enter Password...';
 
 
 		for (var field in form_fields){
